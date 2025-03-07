@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="container">
+      <div class="header-group">
+        <h2 class="main-header">Manday</h2>
+        <p class="header-group__sub-header">2 May</p>
+      </div>
+      <div class="search-field">
+        <input
+          class="search-field__input"
+          type="text"
+          name="search"
+          placeholder="Search"
+        />
+        <span class="search-field__icon material-symbols-rounded">
+          search
+        </span>
+      </div>
+      <div class="split-button">
+        <button
+          class="split-button__button split-button__button--active"
+          id="filter-all"
+          onclick="splitButtonClickHandler(this)"
+        >
+          <span class="material-symbols-rounded split-button__button-icon">
+            check
+          </span>
+          All
+        </button>
+        <button
+          class="split-button__button split-button__button--center"
+          id="filter-active"
+          onclick="splitButtonClickHandler(this)"
+        >
+          <span class="material-symbols-rounded split-button__button-icon">
+            check
+          </span>
+          Active
+        </button>
+        <button
+          class="split-button__button"
+          id="filter-done"
+          onclick="splitButtonClickHandler(this)"
+        >
+          <span class="material-symbols-rounded split-button__button-icon">
+            check
+          </span>
+          Ready
+        </button>
+      </div>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
