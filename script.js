@@ -28,22 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
 
-    toggleCheckbox.addEventListener("change", () => {
-    if (toggleCheckbox.checked) {
-      console.log("Перемикач увімкнено!");
-    } else {
-      console.log("Перемикач вимкнено!");
-    }
-  });
+  
 
 
-  // Показати форму
+ 
   floatButton.addEventListener("click", () => {
       createForm.classList.add("show");
       overlay.classList.add("show");
   });
 
-  // Закрити форму
+
   closeFormBtn.addEventListener("click", () => {
       createForm.classList.remove("show");
       overlay.classList.remove("show");
@@ -54,17 +48,17 @@ document.addEventListener("DOMContentLoaded", () => {
       overlay.classList.remove("show");
     });
 
-  // Отримання завдань із localStorage
+ 
   function getTodos() {
     return JSON.parse(localStorage.getItem("todos")) || [];
   }
 
-  // Збереження у localStorage
+ 
   function saveTodos(todos) {
     localStorage.setItem("todos", JSON.stringify(todos));
   }
 
-  // Видалення завдання
+  
   function deleteTodo(index) {
     const todos = getTodos();
     todos.splice(index, 1);
@@ -72,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderTodos();
   }
 
-  // Додавання нового завдання у початок списку
+ 
   function addTodo(description, startDate) {
     const todos = getTodos();
     const newTodo = {
@@ -81,12 +75,12 @@ document.addEventListener("DOMContentLoaded", () => {
       done: false,
     };
 
-    todos.unshift(newTodo); // Додаємо на початок масиву
+    todos.unshift(newTodo); 
     saveTodos(todos);
     renderTodos();
   }
 
-  // Рендеринг списку завдань
+ 
   function renderTodos() {
     todoList.innerHTML = "";
     const todos = getTodos();
@@ -124,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Обробник додавання завдання
+ 
   createForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -134,11 +128,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (description && startDate) {
       addTodo(description, startDate);
       createForm.reset();
-      createForm.classList.remove("show"); // Ховаємо форму після додавання
+      createForm.classList.remove("show");
+       overlay.classList.remove("show");
     }
   });
 
-  // Видалення та зміна стану (checkbox)
+
   todoList.addEventListener("click", (e) => {
     if (e.target.classList.contains("delete-button")) {
       const index = e.target.getAttribute("data-index");
@@ -153,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Відобразити список завдань при завантаженні сторінки
+
   renderTodos();
 });
 
@@ -166,4 +161,11 @@ const splitButtonClickHandler = (target) => {
     "split-button__button--active"
   );
 };
+  toggleCheckbox.addEventListener("change", () => {
+    if (toggleCheckbox.checked) {
+      console.log("Перемикач увімкнено!");
+    } else {
+      console.log("Перемикач вимкнено!");
+    }
+  });
 

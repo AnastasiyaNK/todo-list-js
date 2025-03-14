@@ -61,30 +61,7 @@
       </div>
       <div class="todos-container">
         <ul class="todo-list">
-          <!-- <li class="todo-block">
-            <label class="checkbox" for="checkbox">
-              <input type="checkbox" name="checkbox" id="checkbox" />
-              <span class="material-symbols-rounded checkbox__check-icon">
-                check
-              </span>
-            </label>
-            <div class="todo-block__data">
-              <p class="todo-block__date">10 января, 11:30</p>
-              <h3 class="todo-block__title">Покормить кошку</h3>
-            </div>
-          </li>
-          <li class="todo-block">
-            <label class="checkbox" for="checkbox">
-              <input type="checkbox" name="checkbox" id="checkbox" />
-              <span class="material-symbols-rounded checkbox__check-icon">
-                check
-              </span>
-            </label>
-            <div class="todo-block__data">
-              <p class="todo-block__date">10 января, 11:30</p>
-              <h3 class="todo-block__title">Покормить кошку</h3>
-            </div>
-          </li> -->
+            
         </ul>
       </div>
 
@@ -98,7 +75,7 @@
         <input
           type="text"
           class="create-form__input"
-          placeholder="Описание"
+          placeholder="Description"
           name="description"
           id="description"
           required
@@ -106,12 +83,12 @@
         <input
           type="datetime-local"
           class="create-form__input"
-          placeholder="Дата"
+          placeholder="Date"
           name="startDate"
           id="startDate"
           required
         />
-        <div>
+        <div class="toggle-wraper">
           <span>remind me</span>
           <label class="toggle-switch">
             <input type="checkbox" id="toggle-checkbox" />
@@ -127,7 +104,7 @@
             type="reset"
             id="close-form"
           >
-            Clear
+            Close
           </button>
         </div>
       </form>

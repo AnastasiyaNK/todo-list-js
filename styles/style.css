@@ -12,13 +12,14 @@
   --acent-color: #6750a4;
   --acent-second-color: #ebdef7;
   --input-color: #ccc;
+  --border-color:#79747e;
 }
 
 body {
   font-family: "Open Sans";
   font-weight: 400;
   font-style: normal;
-  background-color: var(--main-color);
+  background-color:#fff;
 }
 img {
   display: block;
@@ -50,8 +51,9 @@ h6 {
   padding-right: 16px;
   margin: 0 auto;
   height: 100vh;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   position: relative;
+  background-color: var(--main-color);
 }
 
 .header-group {
@@ -107,7 +109,7 @@ h6 {
 .split-button {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  border: 1px solid #79747e;
+  border: 1px solid var(--border-color);
   width: 100%;
   border-radius: 24px;
   overflow: hidden;
@@ -136,8 +138,8 @@ h6 {
   font-size: 18px !important;
 }
 .split-button__button--center {
-  border-left: 1px solid #79747e;
-  border-right: 1px solid #79747e;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
 }
 
 .split-button__button--active {
@@ -242,7 +244,7 @@ h6 {
   transition: all 0.2s ease-in-out;
 }
 .float-button:hover {
-  background-color: var(--acent-color); /* Темніший колір при наведенні */
+  background-color: var(--acent-color); 
 }
 
 .float-button span {
@@ -263,7 +265,7 @@ h6 {
   width: 100%;
   font-size: 16px;
   line-height: 24px;
-  border: 1px solid #79747e;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   background: none;
   outline: none;
@@ -272,7 +274,7 @@ h6 {
 }
 
 .create-form__input:focus {
-  border: 1px solid #6750a4;
+  border: 1px solid  var(--acent-color);
 }
 
 .form__buttons-wrapper {
@@ -293,13 +295,13 @@ h6 {
 }
 .form-button--primary {
   color: #ffffff;
-  background-color: #6750a4;
-  border: 1px solid #6750a4;
+  background-color: var(--acent-color);
+  border: 1px solid  var(--acent-color);
 }
 .form-button--secondary {
-  color: #6750a4;
+  color:  var(--acent-color);
   background-color: #ffffff;
-  border: 1px solid #6750a4;
+  border: 1px solid  var(--acent-color);
 }
 
 .create-form {
@@ -360,14 +362,14 @@ h6 {
   height: 26px;
 }
 
-/* Ховаємо стандартний чекбокс */
+
 .toggle-switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* Слайдер-перемикач */
+
 .slider {
   position: absolute;
   cursor: pointer;
@@ -375,12 +377,11 @@ h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--acent-second-color);
   border-radius: 34px;
   transition: 0.4s;
 }
 
-/* Кружечок */
 .slider:before {
   position: absolute;
   content: "";
@@ -393,12 +394,16 @@ h6 {
   transition: 0.4s;
 }
 
-/* Якщо чекбокс активний (checked), змінюємо фон */
+
 input:checked + .slider {
-  background-color: #6750a4;
+  background-color: var(--acent-color);
 }
 
-/* Переміщуємо кружечок вправо */
+
 input:checked + .slider:before {
   transform: translateX(24px);
+}
+.toggle-wraper{
+      display: flex;
+    justify-content: space-between;
 }
